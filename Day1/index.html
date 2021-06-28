@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Hello plant</title>
+  </head>
+  <body>
+	<br>
+	<div class="container">
+		<div class="row">
+			<div class="jumbotron">
+				<h1 class="display-4">👋 Hello, plants 🌱 !</h1>
+				<p class="lead">This is a small calculator that calculates the time taken by your plant to grow adult. Here I have taken tomato 🍅 as example.</p>
+				<hr class="my-4">
+
+				<form class="row g-3">
+					<div class="col-md-6">
+					  <h4><label for="start" class="form-label">Start date</label></h4>
+					  <input type="date" class="form-control" id="start">
+					</div>
+					<div class="col-md-6">
+						<h4>Expected date of fruit</h4>
+						<h3 id="end">??</h3>
+					  </div>  
+				</form>
+
+				<br>
+
+				<p class="lead">
+					<a class="btn btn-primary btn-lg text-white" id="cal" role="button">Calculate</a>
+				</p>  
+			</div>
+		</div>
+	</div>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<script>
+		document.getElementById("cal").onclick = function() {myFunction()};
+
+		function myFunction() {
+			var lst = addDays(document.getElementById('start').value,70).toString().split(' ');
+			document.getElementById("end").innerHTML = lst[0] + ' ' + lst[1] + ' ' + lst[2] + ' ' + lst[3] + ' ';
+		}
+
+		function addDays(date, days) {
+			var result = new Date(date);
+			result.setDate(result.getDate() + days);
+			return result;
+		}
+	</script>
+  </body>
+</html>
